@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profile - InstaNote</title>
+  <link rel="stylesheet" type="text/css" href="eg4.css">
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
+    import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
+
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCfZNWcHLWvqtopy5Bkmng2ZW9A4x7iHKo",
+      authDomain: "instanotess.firebaseapp.com",
+      projectId: "instanotess",
+      storageBucket: "instanotess.firebasestorage.app",
+      messagingSenderId: "1053449378805",
+      appId: "1:1053449378805:web:219a1c54efc4004e065ebc",
+      measurementId: "G-7P768G76V2"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    // Check if user is signed in
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, fetch profile data from Firestore
+        fetchUserProfile(user.uid);
+      } else {
+        // User is not signed in, redirect to login page
+        window.location.href = "signin.html"; // Redirect to login page
+      }
+    });
+
+    // Fetch user profile from Firestore
+    async function fetchUserProfile(userId) {
+      const profileRef = doc(db, "users", userId);
+      try {
+        const docSnap = await getDoc(profileRef);
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          displayUserProfile(data);
+        } else {
+          console.log("No such document!");
+        }
+      } catch (error) {
+        console.log("Error getting document:", error);
+      }
+    }
+
+    // Display user profile information
+    function displayUserProfile(data) {
+      const profileInfoDiv = document.getElementById('profile-info');
+      profileInfoDiv.innerHTML = `
+        <h3>${data.firstName} ${data.lastName}</h3>
+        <p><strong>Email:</strong> ${data.email}</p>
+      `;
+    }
+  </script>
+</head>
+<div id="main">
+  <h2>Profile</h2>
+  <div id="profile-info">
+    <p>Loading profile...</p>
+  </div>
+  <a href="dashboard.html" class="back-link">Back</a>
+
+
+</body>
+</html>

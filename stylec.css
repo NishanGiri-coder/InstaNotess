@@ -1,0 +1,179 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #bab0b0;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position:relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Input Group Styling */
+.input-group {
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width:fit-content;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    font-size: 14px;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #000000;
+    box-shadow: 0 0 4px #000000;
+}
+
+.input-group label {
+    font-size: 12px;
+    color: #777;
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -8px;
+    left: 12px;
+    background-color: white;
+    padding: 0 5px;
+    font-size: 10px;
+    color: #6a11cb;
+}
+
+/* Button Styling */
+.btn {
+    width:fit-content;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #6a11cb;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #4a0ea3;
+}
+
+/* Other Links */
+.links {
+    margin-top: 20px;
+    font-size: 19px;
+    color: #555;
+}
+
+.links button {
+    border: none;
+    font-weight: bold;
+    background:none;
+    color: #6a11cb;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* OR Line */
+.or {
+    color: #000000;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 15px 0;
+    position: relative;
+}
+
+.or:before,
+.or:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.or:before {
+    left: 0;
+}
+
+.or:after {
+    right: 0;
+}
+
+/* Recover Password Link */
+.recover a {
+    text-decoration: none;
+    color: #6a11cb;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.recover a:hover {
+    color: #4a0ea3;
+}
+
+/* Message Div */
+.messageDiv {
+    width:auto;
+    padding: 10px;
+    background-color: #5bac30;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 14px;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    opacity: 0;
+
+    transition: opacity 0.7s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    .form-title {
+        font-size: 20px;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+}

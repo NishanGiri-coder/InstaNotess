@@ -1,0 +1,99 @@
+/* Social Media Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 35px;  /* Increased space between icons */
+    margin-top: 40px;
+}
+
+.social-icon {
+    font-size: 35px;  /* Made icons bigger */
+    color: #333;  /* Default icon color */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    color:red;  /* Color on hover */
+    transform: scale(1.1);  /* Slight zoom effect */
+}
+
+/* Styling the 'Back' link */
+.back-link {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: rgb(80, 80, 237);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.back-link:hover {
+    background-color: darkblue;
+}
+
+/* Existing body and other styles */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: #3b3e65;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    align-items: flex-start;
+    padding-top: 20px;
+}
+
+h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    color: #f57c00;
+}
+
+
+/* Main content */
+#main {
+    transition: margin-left 0.5s;
+    padding: 20px;
+    margin-left: 0;
+    color: ;
+}
+
+#main h2 {
+    font-size: 30px;
+    color: #ffffff;
+}
+
+/* Profile info */
+#profile-info {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .sidenav a {
+        font-size: 18px;
+        padding: 12px 15px;
+    }
+
+    #main {
+        padding: 10px;
+    }
+}
