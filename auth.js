@@ -6,14 +6,15 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.1.0/firebase
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCfZNWcHLWvqtopy5Bkmng2ZW9A4x7iHKo",
-  authDomain: "instanotess.firebaseapp.com",
-  projectId: "instanotess",
-  storageBucket: "instanotess.firebasestorage.app",
-  messagingSenderId: "1053449378805",
-  appId: "1:1053449378805:web:219a1c54efc4004e065ebc",
-  measurementId: "G-7P768G76V2"
+  apiKey: "",
+  authDomain: "....firebaseapp.com",
+  projectId: ".....",
+  storageBucket: ".....firebasestorage.app",
+  messagingSenderId: "79222...2009",
+  appId: "1:.....",
+  measurementId: "G-5R....."
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
